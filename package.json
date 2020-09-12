@@ -1,0 +1,50 @@
+{
+  "name": "react-listing",
+  "version": "1.0.0",
+  "license": "MIT",
+  "private": false,
+  "author": {
+    "name": "Rita Leitão",
+    "url": "https://www.ritaleitao.pt/"
+  },
+  "keywords": [
+    "app",
+    "react",
+    "reactjs",
+    "typescript"
+  ],
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "engines": {
+    "node": ">=11.0.0",
+    "npm": ">=6.0",
+    "yarn": ">=1.16.0"
+  },
+  "main": "src/index.tsx",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build"
+  },
+  "dependencies": {
+    "firebase": "^7.20.0",
+    "fixer-api": "^2.2.0",
+    "immutable": "^4.0.0-rc.12",
+    "node-sass": "^4.14.1",
+    "react": "16.11.0",
+    "react-dom": "16.11.0",
+    "react-router": "^5.2.0",
+    "react-router-dom": "^5.2.0",
+    "shortid": "2.2.15"
+  },
+  "devDependencies": {
+    "@types/react": "16.9.11",
+    "@types/react-dom": "16.9.4",
+    "@types/shortid": "^0.0.29",
+    "react-scripts": "3.2.0",
+    "typescript": "3.7.2"
+  }
+}

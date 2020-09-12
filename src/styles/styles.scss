@@ -1,0 +1,25 @@
+@import './variables.scss';
+@import './topBar.scss';
+@import './sign.scss';
+@import './input.scss';
+@import './listing.scss';
+
+html {
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+#root,
+body {
+  min-height: 100vh;
+}
+
+body {
+  margin: 0;
+}

@@ -1,0 +1,38 @@
+.input-box {
+  margin: 15px 0 10px;
+
+  label {
+    font-weight: 500;
+    line-height: 22px;
+    color: $gray;
+    margin-bottom: 8px;
+    display: block;
+  }
+
+  input, select {
+    min-height: 47.33px;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    border-radius: 6px;
+    padding: 10px 20px;
+    width: 100%;
+    color: $dark;
+    background-color: $white;
+    background-clip: padding-box;
+    border-color: transparent;
+    outline: none;
+
+    &.border-red {
+      border: 2px solid $red;
+    }
+
+    &::placeholder {
+      opacity: 0.6; 
+    }
+  }
+
+  &--text-error {
+    color: $red;
+  }
+}
