@@ -39,7 +39,12 @@ export const CreateListingForm: React.FC<ListingFormInterface> = (ListingFormInt
   }
   
   const getProductPriceinGBP = (price: number, currency: string) => {
-    return Math.round(price / rates[currency] * 100) / 100
+    //only works at localhost, demo url can't support http requests (only https), so it doesn't convert
+    if(rates) {
+      return Math.round(price / rates[currency] * 100) / 100
+    } else {
+      return price
+    }
   }
 
   const handleInputEnter = () => {

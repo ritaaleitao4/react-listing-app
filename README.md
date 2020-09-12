@@ -1,6 +1,6 @@
 ## Listings App - Rita Leitão
 
-Demo URL: https://transcriptions.netlify.app
+Demo URL: https://listings-app.netlify.app/
 
 ### Project setup
 ```
