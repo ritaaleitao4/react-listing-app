@@ -94,7 +94,7 @@ export const SignupForm: React.FC<Props> = () => {
               onChange={onConfirmPasswordChange}
               className={passwordStateInvalid ? "border-red" : ""}
               type="password"
-              placeholder="Confirm password"
+              placeholder="confirm password"
             />
           </InputRow>
 
