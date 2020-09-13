@@ -1,7 +1,6 @@
 {
   "name": "react-listing",
   "version": "1.0.0",
-  "license": "MIT",
   "private": false,
   "author": {
     "name": "Rita Leitão",
@@ -32,7 +31,6 @@
   "dependencies": {
     "firebase": "^7.20.0",
     "fixer-api": "^2.2.0",
-    "immutable": "^4.0.0-rc.12",
     "node-sass": "^4.14.1",
     "react": "16.11.0",
     "react-dom": "16.11.0",

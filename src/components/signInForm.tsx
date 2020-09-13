@@ -39,12 +39,12 @@ export const SigninForm: React.FC<Props> = () => {
   return (
     <section className="sign">
       <div className="sign__container">
-        <h3>Sign In</h3>
         {isSignedUp && (
-          <p className="sign__info">
-            Signed up successfully! Login to continue
+          <p className="sign__info green">
+            Signed up successfully! Sign In to continue
           </p>
         )}
+        <h3>Sign In</h3>
         <form>
           <InputRow label="Email">
             <input
@@ -53,6 +53,7 @@ export const SigninForm: React.FC<Props> = () => {
               className={!isFormValid ? "border-red" : ""}
               type="email"
               placeholder="email@example.com"
+              name="sign-in-email"
             />
           </InputRow>
           <InputRow label="Password">
@@ -62,6 +63,7 @@ export const SigninForm: React.FC<Props> = () => {
               className={!isFormValid ? "border-red" : ""}
               placeholder="password"
               type="password"
+              name="sign-in-password"
             />
           </InputRow>
 

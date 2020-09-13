@@ -1,4 +1,3 @@
-
 // Listing interface
 export interface ListingInterface {
   id: string

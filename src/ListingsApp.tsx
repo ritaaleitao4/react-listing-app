@@ -16,10 +16,8 @@ const ListingsApp = () => {
   const handleListingCreate = (item: ListingInterface) => {
     // Prepare new listing state
     const newListingsState: ListingInterface[] = [...listing]
-
     // Update new listing state
     newListingsState.push(item)
-
     // Update listing state
     setListings(newListingsState)
   }
@@ -27,10 +25,7 @@ const ListingsApp = () => {
   // Remove existing todo item
   const handleListingRemove = (id: string) => {
     // Prepare new listing state
-    console.log(id)
-    console.log(listing)
     const newListingsState: ListingInterface[] = listing.filter((item: ListingInterface) => item.id !== id)
-
     // Update listing state
     setListings(newListingsState)
   }

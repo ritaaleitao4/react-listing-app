@@ -13,9 +13,7 @@ export const SignupForm: React.FC<Props> = () => {
   const [email, setUserEmail] = useState<string>("")
   const [password, setPassword] = useState<string>("")
   const [confirmPassword, setConfirmPassword] = useState<string>("")
-  const [passwordStateInvalid, setPasswordStateInvalid] = useState<boolean>(
-    false,
-  )
+  const [passwordStateInvalid, setPasswordStateInvalid] = useState<boolean>(false)
   const [emailInvalid, setEmailInvalid] = useState<boolean>(false)
   const history = useHistory()
 
@@ -47,7 +45,12 @@ export const SignupForm: React.FC<Props> = () => {
     if (formValid) {
       setEmailInvalid(false)
       setPasswordStateInvalid(false)
-      await auth.createUserWithEmailAndPassword(email, password).then(() => history.push("/login#signedup"))
+      await auth.createUserWithEmailAndPassword(email, password).then(() => {
+        history.push("/signin#signedup")
+      }).catch((e) => {
+        console.log('err', e)
+        setEmailInvalid(true)
+      })
     }
   }
 
@@ -69,6 +72,7 @@ export const SignupForm: React.FC<Props> = () => {
               className={emailInvalid ? "border-red" : ""}
               type="email"
               placeholder="email@example.com"
+              name="sign-up-email"
             />
           </InputRow>
 
@@ -85,6 +89,7 @@ export const SignupForm: React.FC<Props> = () => {
               className={passwordStateInvalid ? "border-red" : ""}
               placeholder="password"
               type="password"
+              name="sign-up-password"
             />
           </InputRow>
 
@@ -95,6 +100,7 @@ export const SignupForm: React.FC<Props> = () => {
               className={passwordStateInvalid ? "border-red" : ""}
               type="password"
               placeholder="confirm password"
+              name="sign-up-confirm-password"
             />
           </InputRow>
 
@@ -111,7 +117,7 @@ export const SignupForm: React.FC<Props> = () => {
 
         <p className="sign__info">
           Already have an account? 
-          <Link to="/login">
+          <Link to="/signin">
             Sign In
           </Link>
         </p>

@@ -3,7 +3,6 @@ import shortid from 'shortid'
 import InputRow from "./input"
 import { ListingInterface, ListingFormInterface, CURRENCY } from './../interfaces'
 
-
 // Listing form component
 export const CreateListingForm: React.FC<ListingFormInterface> = (ListingFormInterface) => {
   const options = [] as  any;
@@ -30,6 +29,7 @@ export const CreateListingForm: React.FC<ListingFormInterface> = (ListingFormInt
   }
 
   if(!rates) {
+    //Exchange rates (free version) only works at localhost. Demo url only supports https requests, so at this url it doesn't convert
     fetch('http://data.fixer.io/api/latest?access_key=528c49244f1d248766e3d8726f985c95')
     .then(data => data.json())
     .then(data => {
@@ -39,19 +39,15 @@ export const CreateListingForm: React.FC<ListingFormInterface> = (ListingFormInt
   }
   
   const getProductPriceinGBP = (price: number, currency: string) => {
-    //only works at localhost, demo url can't support http requests (only https), so it doesn't convert
-    if(rates) {
-      return Math.round(price / rates[currency] * 100) / 100
-    } else {
-      return price
-    }
+    //exchange rates (free version) only works at localhost. Demo url only supports https requests, so at this url it doesn't convertt
+    if(rates) return Math.round(price / rates[currency] * 100) / 100
+    else return price
   }
 
   const handleInputEnter = () => {
     const validInputs = !!name && !!description && !!price && !!currency
 
     if (validInputs) {
-
       const newListing: ListingInterface = {
         id: shortid.generate(),
         name,

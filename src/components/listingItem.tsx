@@ -1,7 +1,4 @@
-// Import dependencies
 import * as React from 'react'
-
-// Import interfaces
 import { ListingItemInterface } from './../interfaces'
 
 // ListingItem component
