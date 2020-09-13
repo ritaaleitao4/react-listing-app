@@ -15,6 +15,7 @@ export const SignupForm: React.FC<Props> = () => {
   const [confirmPassword, setConfirmPassword] = useState<string>("")
   const [passwordStateInvalid, setPasswordStateInvalid] = useState<boolean>(false)
   const [emailInvalid, setEmailInvalid] = useState<boolean>(false)
+  const [generalError, setGeneralError] = useState<string>("")
   const history = useHistory()
 
   const onUserEmailChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -49,7 +50,7 @@ export const SignupForm: React.FC<Props> = () => {
         history.push("/signin#signedup")
       }).catch((e) => {
         console.log('err', e)
-        setEmailInvalid(true)
+        setGeneralError(e.message)
       })
     }
   }
@@ -57,6 +58,7 @@ export const SignupForm: React.FC<Props> = () => {
   useEffect(() => {
     setEmailInvalid(false)
     setPasswordStateInvalid(false)
+    setGeneralError("")
   }, [email, password, confirmPassword])
 
   return (
@@ -107,6 +109,12 @@ export const SignupForm: React.FC<Props> = () => {
           {passwordStateInvalid && (
             <div className="input-box--text-error">
               Passwords don't match.
+            </div>
+          )}
+
+          {generalError && (
+            <div className="input-box--text-error">
+              {generalError}
             </div>
           )}
         </form>
